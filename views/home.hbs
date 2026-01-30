@@ -1,3 +1,32 @@
+{{#if hasCategoryData}}
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-info text-white py-3">
+                <h5 class="mb-0"><i class="bi bi-pie-chart-fill me-2"></i>Ringkasan per Kategori</h5>
+            </div>
+            <div class="card-body py-4">
+                <div class="row g-3">
+                    {{#each categoryData}}
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="p-3 bg-light rounded border">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-secondary">{{category}}</span>
+                                <small class="text-muted fw-semibold">{{percentage}}%</small>
+                            </div>
+                            <div class="h5 mb-2 text-primary">{{formatCurrency total}}</div>
+                            <div class="progress" style="height: 6px;">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: {{percentage}}%" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}
 
 <div class="row g-4">
     <div class="col-lg-4">
